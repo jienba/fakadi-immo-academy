@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fakadi Immo Academy - Votre avenir dans l'immobilier au Sénégal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #242b4d; /* Deep Blue from logo */
+            color: #e0e0e0;
+        }
+        .gold-text {
+            color: #d4af37; /* Gold accent */
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            background: rgba(212, 175, 55, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .faq-toggle {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+        }
+        .faq-toggle.open {
+            max-height: 1000px;
+            transition: max-height 1s ease-in-out;
+        }
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hero-bg {
+             background-image: linear-gradient(rgba(36, 43, 77, 0.8), rgba(36, 43, 77, 1)), url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2670&auto=format&fit=crop');
+        }
+        .btn-gold {
+            background-color: #d4af37;
+            color: #242b4d;
+        }
+        .btn-gold:hover {
+            background-color: #c09e2a;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-black/30 backdrop-blur-md shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold gold-text">Fakadi Immo Academy</div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#formation" class="text-gray-300 hover:gold-text transition">La Formation</a>
+                <a href="#programme" class="text-gray-300 hover:gold-text transition">Programme</a>
+                <a href="#formateur" class="text-gray-300 hover:gold-text transition">Le Formateur</a>
+                <a href="#offre" class="text-gray-300 hover:gold-text transition">Offre</a>
+            </div>
+            <a href="#inscription" class="hidden md:block btn-gold py-2 px-5 rounded-lg font-semibold transition duration-300">Je m'inscris</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative text-center h-[80vh] flex flex-col justify-center items-center hero-bg bg-cover bg-center">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 text-white">Une compétence, une opportunité, <span class="gold-text">un avenir.</span></h1>
+            <p class="text-lg md:text-xl mb-8 text-gray-300 max-w-3xl mx-auto">Devenez acteur du marché immobilier sénégalais. Une formation pratique, accessible et centrée sur la réalité du terrain.</p>
+            <a href="#inscription" class="btn-gold py-4 px-10 rounded-full text-lg font-bold hover:scale-105 transform transition duration-300 shadow-lg">Commencer ma carrière</a>
+        </div>
+    </section>
+
+    <!-- A propos de la formation -->
+    <section id="formation" class="py-24">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 scroll-animate text-white">Votre avenir dans <span class="gold-text">l'immobilier professionnel</span></h2>
+            <p class="max-w-3xl mx-auto text-gray-400 mb-16 scroll-animate">Le marché immobilier sénégalais est en pleine croissance, mais manque de professionnels bien formés. Notre mission est de vous professionnaliser, vous insérer durablement sur le marché et vous rendre autonome.</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-xl scroll-animate">
+                    <h3 class="text-xl font-bold mb-3 gold-text">Pour qui ?</h3>
+                    <p class="text-gray-300">Jeunes diplômés, personnes en reconversion, femmes entrepreneures, agents commerciaux et porteurs de projets dans l'immobilier.</p>
+                </div>
+                <div class="glass-card p-8 rounded-xl scroll-animate" style="transition-delay: 100ms;">
+                    <h3 class="text-xl font-bold mb-3 gold-text">Format 100% en ligne</h3>
+                    <p class="text-gray-300">Formation complète de 5 semaines, accessible à votre rythme, avec un certificat global à la clé.</p>
+                </div>
+                <div class="glass-card p-8 rounded-xl scroll-animate" style="transition-delay: 200ms;">
+                    <h3 class="text-xl font-bold mb-3 gold-text">Objectifs & Impact</h3>
+                    <p class="text-gray-300">Créer des opportunités concrètes d'emploi ou d'auto-emploi et former une nouvelle génération d'acteurs professionnels.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ce que vous allez apprendre -->
+    <section id="programme" class="py-24 bg-black/20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 scroll-animate">Un programme complet pour <span class="gold-text">maîtriser le marché</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-card p-6 rounded-xl scroll-animate">
+                    <h3 class="text-xl font-bold mb-3 text-white">1. Introduction aux métiers de l'immobilier</h3>
+                    <p class="text-gray-400">Durée: 2 jours. Découvrez les fondamentaux et les opportunités du secteur.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl scroll-animate" style="transition-delay: 100ms;">
+                    <h3 class="text-xl font-bold mb-3 text-white">2. Prospection & Acquisition</h3>
+                    <p class="text-gray-400">Durée: 3 jours. Apprenez à trouver et à acquérir des biens de valeur.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl scroll-animate" style="transition-delay: 200ms;">
+                    <h3 class="text-xl font-bold mb-3 text-white">3. Comprendre le Client</h3>
+                    <p class="text-gray-400">Durée: 3 jours. Maîtrisez le profil, les besoins et les motivations de vos clients.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl scroll-animate" style="transition-delay: 300ms;">
+                    <h3 class="text-xl font-bold mb-3 text-white">4. Les Visites Immobilières</h3>
+                    <p class="text-gray-400">Durée: 3 jours. Préparez, conduisez et assurez le suivi des visites.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl scroll-animate" style="transition-delay: 400ms;">
+                    <h3 class="text-xl font-bold mb-3 text-white">5. Négocier et Convaincre</h3>
+                    <p class="text-gray-400">Durée: 3 jours. Clôturez une vente ou une location avec succès.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl scroll-animate" style="transition-delay: 500ms;">
+                    <h3 class="text-xl font-bold mb-3 text-white">6. Outils digitaux & Visibilité</h3>
+                    <p class="text-gray-400">Durée: 3 jours. Utilisez le digital pour booster votre visibilité en ligne.</p>
+                </div>
+                 <div class="glass-card p-6 rounded-xl scroll-animate md:col-start-2" style="transition-delay: 600ms;">
+                    <h3 class="text-xl font-bold mb-3 text-white">7. Juridique & Administratif</h3>
+                    <p class="text-gray-400">Durée: 3 jours. Naviguez les aspects légaux et administratifs de l'immobilier.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- A propos du formateur -->
+    <section id="formateur" class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12 scroll-animate">
+                <div class="md:w-1/3 text-center">
+                    <img src="C:\Users\snbada\test-gemini-cli\logo.jpg" alt="Logo Fakadi Immo Academy" class="rounded-lg w-56 h-auto mx-auto shadow-lg">
+                </div>
+                <div class="md:w-2/3">
+                    <h2 class="text-3xl font-bold mb-4 text-white">Un encadrement par des <span class="gold-text">professionnels de terrain</span></h2>
+                    <p class="text-gray-400 mb-4">Forts d'une solide expérience sur le terrain, notre mission est de vous professionnaliser. Nous sommes des praticiens, pas des théoriciens. Nous vous transmettons un savoir-faire pratique, sans jargon, adapté aux réalités du marché sénégalais pour des résultats concrets.</p>
+                    <p class="text-gray-300">Prenez en main votre avenir immobilier. Fakadi Immo Academy vous accompagne, pas à pas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offre de lancement -->
+    <section id="offre" class="py-24 bg-black/20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white scroll-animate">Offre de Lancement <span class="gold-text">Pack Complet</span></h2>
+            <p class="max-w-3xl mx-auto text-gray-400 mb-12 scroll-animate">Profitez d'un tarif préférentiel pour notre formation intégrale de 5 semaines. Les places sont limitées.</p>
+            <div class="bg-gradient-to-br from-[#242b4d] to-black/30 border border-yellow-500/50 text-white rounded-2xl shadow-2xl p-8 max-w-lg mx-auto scroll-animate">
+                <h3 class="text-2xl font-bold">Pack Complet (7 modules)</h3>
+                <p class="text-5xl font-extrabold my-4 gold-text">260,000 FCFA</p>
+                <ul class="text-left space-y-3 mb-8 text-lg">
+                    <li class="flex items-center"><svg class="w-6 h-6 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Formation complète de 5 semaines</li>
+                    <li class="flex items-center"><svg class="w-6 h-6 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Outils concrets et modules adaptés</li>
+                    <li class="flex items-center"><svg class="w-6 h-6 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Encadrement par des professionnels</li>
+                    <li class="flex items-center"><svg class="w-6 h-6 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Certificat Global de Formation</li>
+                </ul>
+                <a href="#inscription" class="w-full btn-gold py-4 px-8 rounded-lg text-lg font-bold hover:scale-105 transform transition duration-300">Réserver ma place</a>
+                <p class="text-sm text-gray-500 mt-4">Paiement à l'inscription.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-24">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 scroll-animate"><span class="gold-text">Vos questions,</span> nos réponses</h2>
+            <div class="space-y-4 scroll-animate">
+                <div class="glass-card rounded-lg">
+                    <button class="faq-question w-full text-left p-5 font-semibold text-lg flex justify-between items-center text-white">
+                        Quels sont les prérequis pour s'inscrire ?
+                        <span class="transform transition-transform duration-300 text-2xl gold-text">&plus;</span>
+                    </button>
+                    <div class="faq-toggle"><p class="p-5 pt-0 text-gray-400">Aucun prérequis technique n'est nécessaire. La formation s'adresse à tous, des débutants aux plus expérimentés souhaitant se professionnaliser.</p></div>
+                </div>
+                <div class="glass-card rounded-lg">
+                    <button class="faq-question w-full text-left p-5 font-semibold text-lg flex justify-between items-center text-white">
+                        La formation est-elle reconnue ?
+                        <span class="transform transition-transform duration-300 text-2xl gold-text">&plus;</span>
+                    </button>
+                    <div class="faq-toggle"><p class="p-5 pt-0 text-gray-400">Vous recevez une attestation pour chaque module complété et un Certificat Global de Formation à la fin du pack complet, validant vos compétences pratiques.</p></div>
+                </div>
+                <div class="glass-card rounded-lg">
+                    <button class="faq-question w-full text-left p-5 font-semibold text-lg flex justify-between items-center text-white">
+                        Comment se passe l'inscription ?
+                        <span class="transform transition-transform duration-300 text-2xl gold-text">&plus;</span>
+                    </button>
+                    <div class="faq-toggle"><p class="p-5 pt-0 text-gray-400">L'inscription se fait via le formulaire ci-dessous. Le paiement complet est requis pour valider votre place. Vous pouvez nous contacter sur WhatsApp pour plus d'informations.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulaire d’inscription -->
+    <section id="inscription" class="py-24 bg-black/20">
+        <div class="container mx-auto px-6 max-w-xl text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 scroll-animate"><span class="gold-text">Inscrivez-vous dès maintenant</span></h2>
+            <p class="text-gray-400 mb-8 scroll-animate">Remplissez le formulaire pour réserver votre place. Un de nos conseillers vous contactera pour finaliser l'inscription.</p>
+            <form class="text-left space-y-4 scroll-animate">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Nom complet</label>
+                    <input type="text" id="name" class="block w-full px-4 py-3 bg-white/10 border border-white/20 rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Adresse e-mail</label>
+                    <input type="email" id="email" class="block w-full px-4 py-3 bg-white/10 border border-white/20 rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500">
+                </div>
+                <div>
+                    <label for="phone" class="block text-sm font-medium text-gray-300 mb-1">Téléphone (WhatsApp)</label>
+                    <input type="tel" id="phone" class="block w-full px-4 py-3 bg-white/10 border border-white/20 rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500">
+                </div>
+                <div class="pt-4">
+                    <button type="submit" class="w-full btn-gold py-4 px-8 rounded-lg text-lg font-bold hover:scale-105 transform transition duration-300">Envoyer ma demande d'inscription</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 border-t border-white/10">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <div class="mb-4 flex justify-center space-x-6">
+                <a href="#" class="hover:gold-text transition">LinkedIn</a>
+                <a href="#" class="hover:gold-text transition">Instagram</a>
+                <a href="#" class="hover:gold-text transition">WhatsApp</a>
+            </div>
+            <p class="mb-2">Pour toute question, contactez-nous à <a href="mailto:contact@fakadiacademy.sn" class="underline hover:gold-text">contact@fakadiacademy.sn</a></p>
+            <p class="text-sm text-gray-500">&copy; 2025 Fakadi Immo Academy. Tous droits réservés. | <a href="#" class="underline">Conditions Générales</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // FAQ Toggle
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const icon = question.querySelector('span');
+                    const isOpen = answer.classList.contains('open');
+
+                    document.querySelectorAll('.faq-toggle.open').forEach(openAnswer => {
+                        if (openAnswer !== answer) {
+                            openAnswer.classList.remove('open');
+                            openAnswer.previousElementSibling.querySelector('span').textContent = '+';
+                            openAnswer.previousElementSibling.querySelector('span').classList.remove('rotate-45');
+                        }
+                    });
+                    
+                    answer.classList.toggle('open');
+                    icon.textContent = answer.classList.contains('open') ? '−' : '+';
+                    icon.classList.toggle('rotate-45', answer.classList.contains('open'));
+                });
+            });
+
+            // Scroll Animations
+            const scrollElements = document.querySelectorAll('.scroll-animate');
+            const elementInView = (el, dividend = 1) => {
+                const elementTop = el.getBoundingClientRect().top;
+                return (
+                    elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+                );
+            };
+            const displayScrollElement = (element) => {
+                element.classList.add('visible');
+            };
+            const handleScrollAnimation = () => {
+                scrollElements.forEach((el) => {
+                    if (elementInView(el, 1.25)) {
+                        displayScrollElement(el);
+                    }
+                });
+            };
+            window.addEventListener('scroll', () => {
+                handleScrollAnimation();
+            });
+            handleScrollAnimation();
+        });
+    </script>
+
+</body>
+</html>
