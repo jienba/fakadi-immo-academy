@@ -1,4 +1,42 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Timeline Animations
+    const timelineObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Animate timeline line
+                const line = document.querySelector('.timeline-line');
+                if (line) line.classList.add('visible');
+                
+                // Animate timeline dots and content
+                const dots = entry.target.querySelectorAll('.timeline-dot');
+                const leftContent = entry.target.querySelectorAll('.timeline-content.left');
+                const rightContent = entry.target.querySelectorAll('.timeline-content.right');
+                
+                dots.forEach((dot, index) => {
+                    setTimeout(() => {
+                        dot.classList.add('visible');
+                    }, index * 200);
+                });
+                
+                leftContent.forEach((content, index) => {
+                    setTimeout(() => {
+                        content.classList.add('visible');
+                    }, index * 200);
+                });
+                
+                rightContent.forEach((content, index) => {
+                    setTimeout(() => {
+                        content.classList.add('visible');
+                    }, index * 200);
+                });
+            }
+        });
+    }, { threshold: 0.1 });
+
+    const timelineContainer = document.getElementById('timeline-container');
+    if (timelineContainer) {
+        timelineObserver.observe(timelineContainer);
+    }
     // FAQ Toggle
     const faqQuestions = document.querySelectorAll('.faq-question');
     faqQuestions.forEach(question => {
