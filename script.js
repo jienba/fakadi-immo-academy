@@ -1,4 +1,21 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Hero Carousel
+    const carouselImages = document.querySelectorAll('.carousel-image');
+    let currentImageIndex = 0;
+
+    function showNextImage() {
+        if (carouselImages.length > 0) {
+            carouselImages[currentImageIndex].classList.remove('active');
+            currentImageIndex = (currentImageIndex + 1) % carouselImages.length;
+            carouselImages[currentImageIndex].classList.add('active');
+        }
+    }
+
+    if (carouselImages.length > 0) {
+        // Initially, the first image is already active from the HTML
+        setInterval(showNextImage, 5000); // Change image every 5 seconds
+    }
+
     // Timeline Animations
     const timelineObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
