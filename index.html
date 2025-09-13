@@ -17,9 +17,9 @@
 
     <!-- Header -->
     <header class="bg-[#FAF9F6]/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <nav class="container mx-auto px-6 py-2 flex justify-between items-center">
             <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <img src="logo2.png" class="h-16" alt="Fakadi Immo Logo" />
+                <img src="logo.svg" class="h-16 md:h-20" alt="Fakadi Immo Logo" />
             </a>
             <div class="hidden md:flex space-x-10 text-md font-medium text-stone-700">
                 <a href="#formation" class="hover:gold-text transition-colors duration-300">Accueil</a>
@@ -33,7 +33,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="hero" class="relative h-screen w-full overflow-hidden">
+    <section id="hero" class="relative min-h-[600px] h-screen w-full overflow-hidden">
         <!-- Background Carousel -->
         <div class="absolute top-0 left-0 w-full h-full carousel-container">
             <div class="carousel-images">
@@ -42,12 +42,23 @@
                 <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=2670&auto=format&fit=crop" alt="Family home" class="carousel-image">
             </div>
         </div>
-        <!-- Gradient Overlay and Text -->
-        <div class="absolute top-0 right-0 h-full w-[40%] bg-gradient-to-l from-black/80 via-black/60 to-transparent flex items-center">
-            <div class="text-left p-12 md:p-20">
-                <h1 class="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6" style="font-family: 'Inter', sans-serif;">Bâtissez votre avenir dans l'immobilier</h1>
-                <p class="text-lg md:text-xl text-gray-200 mb-10">Découvrez nos formations exclusives et devenez un expert du marché immobilier sénégalais.</p>
-                <a href="#inscription" class="btn-gold py-4 px-10 rounded-lg text-lg font-bold transition-transform hover:scale-105">Je commence ma formation</a>
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent md:bg-gradient-to-l"></div>
+        <!-- Content -->
+        <div class="relative h-full w-full flex items-center">
+            <div class="container mx-auto px-6 md:px-12">
+                <div class="w-full md:w-[60%] lg:w-[50%] xl:w-[40%] text-left md:ml-auto">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight mb-6">
+                        Bâtissez votre avenir dans l'immobilier
+                    </h1>
+                    <p class="text-base sm:text-lg md:text-xl text-gray-200 mb-8 md:mb-10">
+                        Découvrez nos formations exclusives et devenez un expert du marché immobilier sénégalais.
+                    </p>
+                    <a href="#inscription" 
+                       class="btn-gold inline-block py-3 px-8 md:py-4 md:px-10 rounded-lg text-base md:text-lg font-bold transition-transform hover:scale-105">
+                        Je commence ma formation
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -146,9 +157,9 @@
                                     <p class="text-stone-600 mb-3">Apprenez à trouver et à acquérir des biens de valeur, des techniques de prospection à la constitution d'un portefeuille de qualité.</p>
                                     <p class="font-semibold text-stone-700">Points clés :</p>
                                     <ul class="list-disc list-inside text-stone-600 space-y-1 mt-1">
-                                        <li>Stratégies de recherche de biens</li>
-                                        <li>Négociation avec les propriétaires</li>
-                                        <li>Documentation et validation des biens</li>
+                                        <li>Stratégies de recherche</li>
+                                        <li>Négociation</li>
+                                        <li>Documentation et validation</li>
                                     </ul>
                                 </div>
                             </div>
@@ -257,7 +268,7 @@
                             <h3 class="text-2xl font-bold mb-2 gold-text">Outils digitaux & Visibilité</h3>
                             <p class="text-stone-500 mb-4 font-medium">Durée: 3 jours</p>
                             <div class="flex flex-col md:flex-row gap-6 items-start">
-                                <img src="https://images.unsplash.com/photo-1432888622747-4eb9a8f1c28c?w=800&auto=format&fit=crop&q=60" alt="Marketing digital immobilier" class="w-full md:w-52 rounded-lg object-cover shadow-md">
+                                <img src="https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=800&auto=format&fit=crop&q=60" alt="Marketing digital immobilier" class="w-full md:w-52 rounded-lg object-cover shadow-md">
                                 <div>
                                     <p class="text-stone-600 mb-3">Utilisez le digital pour booster votre visibilité en ligne, du marketing sur les réseaux sociaux à la création de photos et vidéos professionnelles.</p>
                                     <p class="font-semibold text-stone-700">Points clés :</p>
@@ -288,7 +299,7 @@
                             <div class="flex flex-col md:flex-row gap-6 items-start">
                                 <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&auto=format&fit=crop&q=60" alt="Aspects juridiques immobiliers" class="w-full md:w-52 rounded-lg object-cover shadow-md">
                                 <div>
-                                    <p class="text-stone-600 mb-3">Naviguez les aspects légaux et administratifs de l'immobilier, du droit sénégalais à la gestion des contrats et à la conformité réglementaire.</p>
+                                    <p class="text-stone-600 mb-3">Découvrez les aspects légaux et administratifs de l'immobilier, du droit sénégalais à la gestion des contrats et à la conformité réglementaire.</p>
                                     <p class="font-semibold text-stone-700">Points clés :</p>
                                     <ul class="list-disc list-inside text-stone-600 space-y-1 mt-1">
                                         <li>Documents essentiels</li>
@@ -355,16 +366,17 @@
             <div class="container mx-auto px-6">
                 <div class="flex flex-col md:flex-row items-center gap-16 scroll-animate">
                     <div class="md:w-1/3 text-center">
-                        <img src="logo.jpg" alt="Logo Fakadi Immo Academy"
+                        <img src="logo.svg" alt="Logo Fakadi Immo Academy"
                             class="rounded-full w-64 h-64 mx-auto shadow-2xl object-cover">
                     </div>
                     <div class="md:w-2/3">
                         <h2 class="text-4xl font-bold mb-5">Un encadrement par des <span class="gold-text">professionnels de
                                 terrain</span></h2>
-                        <p class="text-stone-600 mb-5 text-lg">Forts d'une solide expérience sur le terrain, notre mission
-                            est de vous professionnaliser. Nous sommes des praticiens, pas des théoriciens. Nous vous
-                            transmettons un savoir-faire pratique, sans jargon, adapté aux réalités du marché sénégalais
-                            pour des résultats concrets.</p>
+                        <p class="text-stone-600 mb-5 text-lg">
+                            Forts d’une solide expérience sur le terrain, notre mission est
+                             de vous professionnaliser, vous insérer durablement sur le marché et vous rendre autonome grâce à 
+                             une formation pratique, accessible et centrée sur la réalité du terrain
+                        </p>
                         <p class="font-semibold">Prenez en main votre avenir immobilier. Fakadi Immo Academy vous
                             accompagne, pas à pas.</p>
                     </div>
