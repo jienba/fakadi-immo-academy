@@ -7,6 +7,30 @@ body {
     color: #212121; /* Noir charbon */
 }
 
+/* Menu Spy Styles */
+.nav-link {
+    position: relative;
+}
+
+.nav-link.active {
+    color: #D4AF37;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #D4AF37;
+    transition: width 0.3s ease;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
 /* Hero Section Styles */
 #hero {
     position: relative;
