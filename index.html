@@ -526,40 +526,69 @@
                         class="block w-full px-5 py-4 bg-white border border-[#E8D5B7] rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent transition-all duration-300">
                 </div>
                 <div>
-                    <label class="block text-sm font-medium text-stone-700 mb-2">Modules souhaités</label>
-                    <div class="space-y-3 pt-2">
-                        <label class="flex items-center text-stone-800">
-                            <input type="checkbox" name="module" value="Pack Complet" class="h-5 w-5 text-[#D4AF37] border-[#E8D5B7] rounded focus:ring-[#D4AF37] focus:ring-offset-0 focus:ring-2">
-                            <span class="ml-3 font-semibold">Pack Complet (7 modules)</span>
-                        </label>
-                        <label class="flex items-center text-stone-700">
-                            <input type="checkbox" name="module" value="Introduction aux métiers de l'immobilier" class="h-5 w-5 text-[#D4AF37] border-[#E8D5B7] rounded focus:ring-[#D4AF37] focus:ring-offset-0 focus:ring-2">
-                            <span class="ml-3">Module 1: Introduction aux métiers de l'immobilier</span>
-                        </label>
-                        <label class="flex items-center text-stone-700">
-                            <input type="checkbox" name="module" value="Prospection & Acquisition" class="h-5 w-5 text-[#D4AF37] border-[#E8D5B7] rounded focus:ring-[#D4AF37] focus:ring-offset-0 focus:ring-2">
-                            <span class="ml-3">Module 2: Prospection & Acquisition</span>
-                        </label>
-                        <label class="flex items-center text-stone-700">
-                            <input type="checkbox" name="module" value="Comprendre le Client" class="h-5 w-5 text-[#D4AF37] border-[#E8D5B7] rounded focus:ring-[#D4AF37] focus:ring-offset-0 focus:ring-2">
-                            <span class="ml-3">Module 3: Comprendre le Client</span>
-                        </label>
-                        <label class="flex items-center text-stone-700">
-                            <input type="checkbox" name="module" value="Les Visites Immobilières" class="h-5 w-5 text-[#D4AF37] border-[#E8D5B7] rounded focus:ring-[#D4AF37] focus:ring-offset-0 focus:ring-2">
-                            <span class="ml-3">Module 4: Les Visites Immobilières</span>
-                        </label>
-                        <label class="flex items-center text-stone-700">
-                            <input type="checkbox" name="module" value="Négocier et Convaincre" class="h-5 w-5 text-[#D4AF37] border-[#E8D5B7] rounded focus:ring-[#D4AF37] focus:ring-offset-0 focus:ring-2">
-                            <span class="ml-3">Module 5: Négocier et Convaincre</span>
-                        </label>
-                        <label class="flex items-center text-stone-700">
-                            <input type="checkbox" name="module" value="Outils digitaux & Visibilité" class="h-5 w-5 text-[#D4AF37] border-[#E8D5B7] rounded focus:ring-[#D4AF37] focus:ring-offset-0 focus:ring-2">
-                            <span class="ml-3">Module 6: Outils digitaux & Visibilité</span>
-                        </label>
-                        <label class="flex items-center text-stone-700">
-                            <input type="checkbox" name="module" value="Juridique & Administratif" class="h-5 w-5 text-[#D4AF37] border-[#E8D5B7] rounded focus:ring-[#D4AF37] focus:ring-offset-0 focus:ring-2">
-                            <span class="ml-3">Module 7: Juridique & Administratif</span>
-                        </label>
+                    <label class="block text-sm font-medium text-stone-700 mb-4">Modules souhaités</label>
+                    <div class="space-y-4">
+                        <!-- Pack Complet -->
+                        <div class="module-option">
+                            <input type="checkbox" id="module_pack" name="module" value="Pack Complet" class="hidden">
+                            <label for="module_pack" class="module-label-card">
+                                <span class="custom-checkbox"></span>
+                                <span class="font-semibold text-stone-800">Pack Complet (7 modules)</span>
+                            </label>
+                        </div>
+                        
+                        <!-- Individual Modules Grid -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            <div class="module-option">
+                                <input type="checkbox" id="module_1" name="module" value="Introduction aux métiers de l'immobilier" class="hidden">
+                                <label for="module_1" class="module-label-card">
+                                    <span class="custom-checkbox"></span>
+                                    <span class="text-sm text-stone-700">Module 1: Introduction</span>
+                                </label>
+                            </div>
+                            <div class="module-option">
+                                <input type="checkbox" id="module_2" name="module" value="Prospection & Acquisition" class="hidden">
+                                <label for="module_2" class="module-label-card">
+                                    <span class="custom-checkbox"></span>
+                                    <span class="text-sm text-stone-700">Module 2: Prospection</span>
+                                </label>
+                            </div>
+                            <div class="module-option">
+                                <input type="checkbox" id="module_3" name="module" value="Comprendre le Client" class="hidden">
+                                <label for="module_3" class="module-label-card">
+                                    <span class="custom-checkbox"></span>
+                                    <span class="text-sm text-stone-700">Module 3: Client</span>
+                                </label>
+                            </div>
+                            <div class="module-option">
+                                <input type="checkbox" id="module_4" name="module" value="Les Visites Immobilières" class="hidden">
+                                <label for="module_4" class="module-label-card">
+                                    <span class="custom-checkbox"></span>
+                                    <span class="text-sm text-stone-700">Module 4: Visites</span>
+                                </label>
+                            </div>
+                            <div class="module-option">
+                                <input type="checkbox" id="module_5" name="module" value="Négocier et Convaincre" class="hidden">
+                                <label for="module_5" class="module-label-card">
+                                    <span class="custom-checkbox"></span>
+                                    <span class="text-sm text-stone-700">Module 5: Négociation</span>
+                                </label>
+                            </div>
+                            <div class="module-option">
+                                <input type="checkbox" id="module_6" name="module" value="Outils digitaux & Visibilité" class="hidden">
+                                <label for="module_6" class="module-label-card">
+                                    <span class="custom-checkbox"></span>
+                                    <span class="text-sm text-stone-700">Module 6: Digital</span>
+                                </label>
+                            </div>
+                            <div class="module-option">
+                                <input type="checkbox" id="module_7" name="module" value="Juridique & Administratif" class="hidden">
+                                <label for="module_7" class="module-label-card">
+                                    <span class="custom-checkbox"></span>
+                                    <span class="text-sm text-stone-700">Module 7: Juridique</span>
+                                </label>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="pt-6">
