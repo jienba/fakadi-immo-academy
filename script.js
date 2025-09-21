@@ -1,4 +1,75 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Module Selection and Checkbox Bi-directional Linking
+    const moduleCheckboxes = document.querySelectorAll('input[name="module"]');
+    const moduleButtons = document.querySelectorAll('#programme-timeline .btn-gold');
+    const packCompletCheckbox = document.querySelector('input[name="module"][value="Pack Complet"]');
+    const individualModuleCheckboxes = Array.from(moduleCheckboxes).filter(cb => cb.value !== 'Pack Complet');
+
+    // Helper function to update a button's text based on module title
+    function updateModuleButton(title, isChecked) {
+        moduleButtons.forEach(button => {
+            const card = button.closest('.card');
+            if (!card) return;
+            const cardTitleEl = card.querySelector('h3');
+            if (!cardTitleEl) return;
+            
+            const cardTitle = cardTitleEl.textContent.trim();
+            if (cardTitle === title) {
+                button.textContent = isChecked ? 'Module sélectionné' : 'Choisir ce module';
+            }
+        });
+    }
+
+    // Helper function to update the "Pack Complet" checkbox state
+    function updatePackCompletCheckbox() {
+        if (packCompletCheckbox) {
+            const allIndividualChecked = individualModuleCheckboxes.every(cb => cb.checked);
+            packCompletCheckbox.checked = allIndividualChecked;
+        }
+    }
+
+    // Direction 1: Clicking a module button updates the checkbox
+    moduleButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const card = this.closest('.card');
+            if (!card) return;
+            const titleEl = card.querySelector('h3');
+            if (!titleEl) return;
+
+            const title = titleEl.textContent.trim();
+            const checkbox = document.querySelector(`input[name="module"][value="${title}"]`);
+            
+            if (checkbox) {
+                checkbox.checked = !checkbox.checked;
+                // Manually trigger change event to sync everything
+                checkbox.dispatchEvent(new Event('change'));
+            }
+        });
+    });
+
+    // Direction 2: Changing a checkbox updates the button and potentially the pack
+    moduleCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            const title = this.value;
+            const isChecked = this.checked;
+
+            if (title === 'Pack Complet') {
+                // If "Pack Complet" is changed, update all individual modules
+                individualModuleCheckboxes.forEach(cb => {
+                    if (cb.checked !== isChecked) {
+                        cb.checked = isChecked;
+                        updateModuleButton(cb.value, isChecked);
+                    }
+                });
+            } else {
+                // If an individual module is changed, update its button and the pack checkbox
+                updateModuleButton(title, isChecked);
+                updatePackCompletCheckbox();
+            }
+        });
+    });
+
     // Menu Spy Implementation
     function initMenuSpy() {
         const sections = document.querySelectorAll('section[id]');
@@ -174,11 +245,21 @@ function sendToWhatsApp(event) {
   const email = document.getElementById("email").value;
   const phone = document.getElementById("phone").value;
 
+  const selectedModules = document.querySelectorAll('input[name="module"]:checked');
+  let modulesText = "";
+  if (selectedModules.length > 0) {
+      modulesText = "*Modules souhaités:*%0A";
+      selectedModules.forEach(checkbox => {
+          modulesText += `- ${checkbox.value}%0A`;
+      });
+  }
+
   const message =
     `*Nouvelle demande d'inscription*%0A%0A` +
     `*Nom:* ${name}%0A` +
     `*Email:* ${email}%0A` +
-    `*Téléphone:* ${phone}%0A`;
+    `*Téléphone:* ${phone}%0A` +
+    (modulesText ? `%0A${modulesText}` : '');
 
   const whatsappNumber = "221710132121";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;

@@ -31,6 +31,15 @@ body {
     width: 100%;
 }
 
+/* Module Selection Styles */
+.btn-gold[href="#inscription"] {
+    cursor: pointer;
+}
+
+.btn-gold[href="#inscription"]:focus {
+    outline: none;
+}
+
 /* Hero Section Styles */
 #hero {
     position: relative;
