@@ -238,6 +238,7 @@ document.addEventListener('DOMContentLoaded', function () {
   handleScrollAnimation();
 });
 
+
 function sendToWhatsApp(event) {
   event.preventDefault();
 
@@ -245,24 +246,65 @@ function sendToWhatsApp(event) {
   const email = document.getElementById("email").value;
   const phone = document.getElementById("phone").value;
 
+  // Récupération des modules sélectionnés
   const selectedModules = document.querySelectorAll('input[name="module"]:checked');
   let modulesText = "";
+
   if (selectedModules.length > 0) {
-      modulesText = "*Modules souhaités:*%0A";
+    // Vérifier si "Pack Complet" est sélectionné
+    const hasPackComplet = Array.from(selectedModules).some(cb => cb.value === "Pack Complet");
+
+    if (hasPackComplet) {
+      modulesText = "*Modules souhaités:*\n- Pack Complet (7 modules)\n";
+    } else {
+      modulesText = "*Modules souhaités:*\n";
       selectedModules.forEach(checkbox => {
-          modulesText += `- ${checkbox.value}%0A`;
+        modulesText += `- ${checkbox.value}\n`;
       });
+    }
   }
 
+  // Construction du message avec de vrais retours à la ligne
   const message =
-    `*Nouvelle demande d'inscription*%0A%0A` +
-    `*Nom:* ${name}%0A` +
-    `*Email:* ${email}%0A` +
-    `*Téléphone:* ${phone}%0A` +
-    (modulesText ? `%0A${modulesText}` : '');
+    `*Nouvelle demande d'inscription*\n\n` +
+    `*Nom:* ${name}\n` +
+    `*Email:* ${email}\n` +
+    `*Téléphone:* ${phone}\n` +
+    (modulesText ? `${modulesText}` : "");
 
+  // Numéro WhatsApp en format international
   const whatsappNumber = "221710132121";
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+  console.log("WhatsApp Message:", message); // Debug
 
   window.open(whatsappUrl, "_blank");
+  resetForm();
+}
+
+// Fonction de réinitialisation du formulaire
+function resetForm() {
+  document.getElementById("name").value = "";
+  document.getElementById("email").value = "";
+  document.getElementById("phone").value = "";
+  document.querySelectorAll('input[name="module"]:checked').forEach(cb => cb.checked = false);
+}
+
+function resetForm() {
+    // Reset input fields
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("phone").value = "";
+
+    // Uncheck all module checkboxes
+    const moduleCheckboxes = document.querySelectorAll('input[name="module"]');
+    moduleCheckboxes.forEach(checkbox => {
+        checkbox.checked = false;
+    });
+
+    // Reset all module button texts
+    const moduleButtons = document.querySelectorAll('#programme-timeline .btn-gold');
+    moduleButtons.forEach(button => {
+        button.textContent = 'Choisir ce module';
+    });
 }
