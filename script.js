@@ -123,6 +123,35 @@ document.addEventListener('DOMContentLoaded', function () {
         activateMenuByScroll();
     }
 
+    // Burger Menu
+    const burgerMenuButton = document.getElementById('burger-menu-button');
+    const closeMenuButton = document.getElementById('close-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileNavLinks = document.querySelectorAll('.nav-link-mobile');
+
+    burgerMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.remove('hidden');
+        setTimeout(() => {
+            mobileMenu.classList.add('open');
+        }, 10);
+    });
+
+    closeMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        setTimeout(() => {
+            mobileMenu.classList.add('hidden');
+        }, 300);
+    });
+
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300);
+        });
+    });
+
     // Initialize Menu Spy
     initMenuSpy();
     

@@ -284,6 +284,40 @@ body {
     background-color: #FDFBF5;
 }
 
+/* Burger Menu Styles */
+#mobile-menu {
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%);
+}
+
+#mobile-menu.open {
+    transform: translateX(0);
+}
+
+.nav-link-mobile {
+    position: relative;
+}
+
+.nav-link-mobile.active {
+    color: #D4AF37;
+}
+
+.nav-link-mobile::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #D4AF37;
+    transition: width 0.3s ease;
+}
+
+.nav-link-mobile.active::after {
+    width: 100%;
+}
+
+
 .custom-checkbox {
     width: 1.25rem; /* 20px */
     height: 1.25rem; /* 20px */

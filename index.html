@@ -79,12 +79,38 @@
                 <a href="#formation" class="nav-link hover:gold-text transition-colors duration-300">Accueil</a>
                 <a href="#programme" class="nav-link hover:gold-text transition-colors duration-300">Programme</a>
                 <a href="#offre" class="nav-link hover:gold-text transition-colors duration-300">Offre</a>
-                <a href="#how-to-register" class="nav-link hover:gold-text transition-colors duration-300">Comment s'inscrire?</a>
+                <a href="#how-to-register" class="nav-link hover:gold-text transition-colors duration-300">Comment s'incrire?</a>
                 <a href="#formateur" class="nav-link hover:gold-text transition-colors duration-300">A propos</a>
             </div>
             <a href="#inscription" class="hidden md:block btn-gold py-3 px-6 rounded-full transition duration-300">Je
                 m'inscris</a>
+            <!-- Burger menu button -->
+            <div class="md:hidden flex items-center">
+                <button id="burger-menu-button" class="text-stone-700 hover:text-yellow-600 focus:outline-none">
+                    <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
         </nav>
+        <!-- Mobile navigation menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#FAF9F6]/95 backdrop-blur-lg absolute top-0 left-0 w-full h-screen">
+            <div class="flex justify-end p-6">
+                <button id="close-menu-button" class="text-stone-700 hover:text-yellow-600 focus:outline-none">
+                    <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="flex flex-col items-center justify-center h-full space-y-8 text-2xl font-medium text-stone-700">
+                <a href="#formation" class="nav-link-mobile hover:gold-text transition-colors duration-300">Accueil</a>
+                <a href="#programme" class="nav-link-mobile hover:gold-text transition-colors duration-300">Programme</a>
+                <a href="#offre" class="nav-link-mobile hover:gold-text transition-colors duration-300">Offre</a>
+                <a href="#how-to-register" class="nav-link-mobile hover:gold-text transition-colors duration-300">Processus</a>
+                <a href="#formateur" class="nav-link-mobile hover:gold-text transition-colors duration-300">A propos</a>
+                <a href="#inscription" class="mt-8 btn-gold py-3 px-6 rounded-full transition duration-300">Je m'inscris</a>
+            </div>
+        </div>
     </header>
 
     <!-- Hero Section -->
